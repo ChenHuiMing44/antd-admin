@@ -1,0 +1,1 @@
+import React from "react"import {connect} from "react-redux"import store from "./../store/index"export default connect(	(state) => {		return {			$state: state,			$store: store		}	})

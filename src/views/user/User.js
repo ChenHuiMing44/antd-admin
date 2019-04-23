@@ -1,0 +1,1 @@
+/* eslint-disable no-useless-constructor */import React, {Component} from "react"class User extends Component {    constructor (props) {    	super(props)    }    render() {        return (            <div>user user页面</div>        )    }}export default User

@@ -1,0 +1,1 @@
+/* eslint-disable no-useless-constructor */import React, {Component} from "react"class Common2 extends Component {    constructor (props) {    	super(props)    }    render() {        return (            <div>common2 磨块</div>        )    }}export default Common2

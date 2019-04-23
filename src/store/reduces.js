@@ -1,0 +1,1 @@
+import mutaitions from "./mutations"export default function (state, action) {	let type = action.type;	if ( !mutaitions[type] ){		return state	}	return Object.assign({}, mutaitions[type](state, action));}

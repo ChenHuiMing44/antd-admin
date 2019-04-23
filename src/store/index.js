@@ -1,0 +1,1 @@
+import reduces from "./reduces"import {createStore} from 'redux'import state from "./state"console.log(state);const store = createStore(reduces, state);export default store
