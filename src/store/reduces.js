@@ -1,1 +1,1 @@
-import mutaitions from "./mutations"export default function (state, action) {	let type = action.type;	if ( !mutaitions[type] ){		return state	}	return Object.assign({}, mutaitions[type](state, action));}
+import initStore from "./initStore"export default function (state, action) {	let type = action.type;	if (!initStore.mutations[type] ){		return state	}	console.log(action);	return Object.assign({}, initStore.mutations[type](state, action));}

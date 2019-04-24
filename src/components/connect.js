@@ -1,1 +1,1 @@
-import React from "react"import {connect} from "react-redux"import store from "./../store/index"export default connect(	(state) => {		return {			$state: state,			$store: store		}	})
+import React from "react"import {connect} from "react-redux"import store from "./../store/index"import { withRouter } from 'react-router'export default connect(	(state) => ({		$state: state,		$store: store	}))

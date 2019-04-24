@@ -1,1 +1,1 @@
-import reduces from "./reduces"import {createStore} from 'redux'import state from "./state"console.log(state);const store = createStore(reduces, state);export default store
+import reduces from "./reduces"import {createStore, applyMiddleware } from 'redux'import state from "./state"import thunk from "redux-thunk"import initStore from "./initStore"const store = createStore(reduces, initStore.state, applyMiddleware(thunk));export default store

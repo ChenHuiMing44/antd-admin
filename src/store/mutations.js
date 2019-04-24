@@ -1,1 +1,1 @@
-export default {}
+//不对外调用 mutations  感觉这个没什么用啊export default {}

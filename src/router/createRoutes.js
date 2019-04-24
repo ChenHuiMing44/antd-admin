@@ -1,1 +1,0 @@
-// import React, {Component} from "react"// import {Router, Route, Redirect} from "react-router-dom"//// function RouteWithParams(route) {// 	let {path, component, redirect} = route;// 	if(redirect){// 		return (<Redirect exact from={path} to={redirect}/>)// 	}// 	return (<Route key={path} path={path} component={component}>)// }//

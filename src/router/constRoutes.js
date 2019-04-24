@@ -19,39 +19,7 @@ import Welcome from "./../views/welcome/Welcome"
       }
  */
 const routes = [
-	{
-		//模板页面 建议不用动
-		path: "/",
-		component: CusLayout,
-		hidden: true,
-		name: "首页",
-		redirect: "/index",
-		meta: {
-			title: "贝连管理系统"
-		},
-		children: [
-			{
-				path: "index",
-				component: Welcome,
-				name: "Welcome",
-				meta: {
-					fixTag: true
-				}
-			}
-		]
-	},
-	// {      //有的时候需要一来重定向到一个特定的页面 这个时候删除上面那个 使用 这个
-	// 	path: "/",
-	// 	component: Layout,
-	// 	redirect: 'index',
-	// 	children: [
-	// 		{
-	// 			path: "index",
-	// 			component: "XXX",
-	// 			name: "XXX"
-	// 		}
-	// 	]
-	// },
+
 	{
 		path: "/login",
 		name: "Login",
@@ -61,7 +29,24 @@ const routes = [
 			title: "登录"
 		}
 	},
-
+	{
+		path: "/",
+		hidden: true,
+		redirect: "/index",
+		mate: {
+			title: "首页"
+		},
+		children: [
+			{
+				path: "index",
+				component: Welcome,
+				name: "Welcome",
+				meta: {
+					fixTag: true
+				}
+			},
+		]
+	},
 	{
 		path: "/404",
 		component: Error404,
@@ -72,5 +57,4 @@ const routes = [
 	}
 ]
 
-console.log(routes);
 export default routes
