@@ -1,0 +1,1 @@
+.side-box{    width: auto !important;    flex: 0 0 auto !important;    max-width: none !important;    min-width: 0 !important;    transition: width .5s;}.sidebar-scroll{    height: 100%;    overflow-y: auto;    padding-bottom: 50px;}

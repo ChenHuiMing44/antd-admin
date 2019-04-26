@@ -1,1 +1,1 @@
-import constRoutes from "./../router/constRoutes"import asyncRoutes from "./../router/asyncRouterMap"console.log(constRoutes);export default {	routes: constRoutes.concat(asyncRoutes),	name: "chen"}
+import constRoutes from "./../router/constRoutes"import asyncRoutes from "./../router/asyncRouterMap"console.log(constRoutes);export default {}

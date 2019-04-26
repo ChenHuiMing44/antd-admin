@@ -19,33 +19,14 @@ import Welcome from "./../views/welcome/Welcome"
       }
  */
 const routes = [
-
 	{
-		path: "/login",
-		name: "Login",
-		component: Login,
-		hidden: true,
+		path: "/index",
+		component: Welcome,
+		name: "Welcome",
 		meta: {
-			title: "登录"
+			title: "首页",
+			fixTag: true
 		}
-	},
-	{
-		path: "/",
-		hidden: true,
-		redirect: "/index",
-		mate: {
-			title: "首页"
-		},
-		children: [
-			{
-				path: "index",
-				component: Welcome,
-				name: "Welcome",
-				meta: {
-					fixTag: true
-				}
-			},
-		]
 	},
 	{
 		path: "/404",
@@ -55,6 +36,7 @@ const routes = [
 			title: "404错误"
 		}
 	}
+
 ]
 
 export default routes
