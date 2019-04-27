@@ -23,6 +23,7 @@ const routes = [
 		path: "/index",
 		component: Welcome,
 		name: "Welcome",
+    hidden: true,
 		meta: {
 			title: "首页",
 			fixTag: true

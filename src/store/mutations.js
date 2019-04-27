@@ -1,1 +1,1 @@
-//不对外调用 mutations  感觉这个没什么用啊export default {}
+import initStore from "./initStore"//不对外调用 mutations  感觉这个没什么用啊export default {  RE_SET_STATE: (state) => {    state = initStore.state    return state  }}
