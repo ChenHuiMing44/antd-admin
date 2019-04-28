@@ -15,12 +15,15 @@ export default {
       return state
     },
     DEL_VISITED_VIEW: (state, {view}) => {
-      for (const [i, v] of state.visitedViews.entries()) {
-        if (v.path === view.path) {
-          state.visitedViews.splice(i, 1)
-          break
-        }
-      }
+	    for (const [i, v] of state.visitedViews.entries()) {
+		    if (v.path === view.path) {
+			    state.visitedViews.splice(i, 1)
+			    break
+		    }
+	    }
+      //react 没有深层次的监听，故而这里如果不这样写
+      //删除页面会导致指针不变从而导致页面不刷新
+      state.visitedViews = [...state.visitedViews]
       return state
     }
   },

@@ -39,7 +39,6 @@ class TagsBar extends Component{
     componentDidMount(){
       this.initTags()
       this.props.history.listen(() => {
-        console.log(2222222);
         setTimeout(() => {
           let {routes,location, addTag} = this.props;
           let tag = getRouteWithPath(routes, "/", location.pathname);
@@ -50,13 +49,19 @@ class TagsBar extends Component{
         })
       })
     }
-
-
-    componentDidUpdate(){
-
+    closeTag(tag,e){
+    	let {deleteTag, visitedViews,history} = this.props;
+    	if(visitedViews.slice(-1)[0].path === tag.path && this.isActive(tag)){
+    		let lastTag = visitedViews.slice(-2)[0];
+		    history.push(lastTag.path || "/");
+	    }
+	    deleteTag(tag);
+	    e.stopPropagation();
+	    // e.stopPropagation();
     }
-    closeSelectedTag(tag){
-
+    linkWithTag(tag,e){
+    	let {history} = this.props
+    	history.push(tag.path)
     }
     // addTags
     filterAffixTags(routes, basePath = '/') {
@@ -98,17 +103,16 @@ class TagsBar extends Component{
                 {
                   visitedViews.map(
                     tag => (
-                      <Link
+                      <div
                           key={tag.path}
                           className={'tags-view-item ' + (this.isActive(tag) ? 'active' : '')}
-                          to={{ path: tag.path, query: tag.query}}
-                          onClick={this.closeSelectedTag(tag)}
+                          onClick={(e) => this.linkWithTag(tag,e)}
                       >
                         {tag.name}
                         { (tag.meta && !tag.meta.fixTag) &&
-                        (<span className={"icon-close"} onClick={this.closeSelectedTag(tag)}/>)
+                        (<span className={"icon-close iconfont"} onClick={(e) => this.closeTag(tag,e)}/>)
                         }
-                      </Link>
+                      </div>
                     )
                   )
                 }
