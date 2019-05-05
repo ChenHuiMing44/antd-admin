@@ -28,9 +28,9 @@ export const aesSwitch = false
 
 export const aesKey = "billion@app1.com"
 
-export const appName = "贝连管理系统"
+export const appName = "管理系统"
 
-export const appTitle = "贝连管理系统"
+export const appTitle = "管理系统"
 
 export const baseUrl = "localhost:8780"
 
